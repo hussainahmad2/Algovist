@@ -67,21 +67,21 @@ export default function ContactSection() {
     {
       icon: Mail,
       title: "Email",
-      value: "hello@algovist.com",
+      value: "algovist@gmail.com",
       bgColor: "bg-primary/20",
       iconColor: "text-primary"
     },
     {
       icon: Phone,
       title: "Phone",
-      value: "+1 (555) 123-4567",
+      value: "+923239972069",
       bgColor: "bg-accent/20",
       iconColor: "text-accent"
     },
     {
       icon: MapPin,
       title: "Address",
-      value: "123 Innovation Street\nTech City, TC 12345",
+      value: "Pakistan",
       bgColor: "bg-primary/20",
       iconColor: "text-primary"
     }
