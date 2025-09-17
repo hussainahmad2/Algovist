@@ -1,5 +1,6 @@
 import Navigation from "@/components/Navigation";
 import HeroSection from "@/components/HeroSection";
+import FeaturedProjectSection from "@/components/FeaturedProjectSection";
 import ServicesSection from "@/components/ServicesSection";
 import TeamSection from "@/components/TeamSection";
 import PortfolioSection from "@/components/PortfolioSection";
@@ -11,6 +12,7 @@ export default function Home() {
     <div className="overflow-x-hidden">
       <Navigation />
       <HeroSection />
+      <FeaturedProjectSection />
       <ServicesSection />
       <TeamSection />
       <PortfolioSection />
