@@ -4,6 +4,7 @@ import FeaturedProjectSection from "@/components/FeaturedProjectSection";
 import ServicesSection from "@/components/ServicesSection";
 import TeamSection from "@/components/TeamSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
+import TrustIndicatorsSection from "@/components/TrustIndicatorsSection";
 import PortfolioSection from "@/components/PortfolioSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
@@ -17,6 +18,7 @@ export default function Home() {
       <ServicesSection />
       <TeamSection />
       <TestimonialsSection />
+      <TrustIndicatorsSection />
       <PortfolioSection />
       <ContactSection />
       <Footer />
