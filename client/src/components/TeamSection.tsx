@@ -1,10 +1,11 @@
 import { motion } from "framer-motion";
 import { Linkedin, Twitter, User } from "lucide-react";
-import ahsanImage from "@assets/8_1758097630328.jpg";
-import hammadImage from "@assets/5_1758097630329.jpg";
-import anasImage from "@assets/6_1758097630327.jpg";
-import ashirImage from "@assets/7_1758097630328.jpg";
-
+import ashirImage from "@assets/8_1758099862390.jpg";
+import haiderImage from "@assets/5_1758097630329.jpg";
+import anasImage from "@assets/6_1758099862387.jpg";
+import ahsanImage from "@assets/7_1758097630328.jpg";
+import aneesImage from "@assets/4_1758097630329.jpg";
+import hammadImage from "@assets/3_1758099862382.jpg";
 const leadership = [
   {
     name: "Ahsan Nawaz",
@@ -23,15 +24,15 @@ const leadership = [
 const technicalTeam = [
   {
     name: "Hammad Ul Hassan",
-    role: "Head of Development",
+    role: "Senior Mobile App Developer",
     image: hammadImage,
-    description: "Senior full-stack developer leading the development team and architecting robust, scalable solutions using cutting-edge technologies and best practices."
+    description: "Experienced mobile engineer building high-performance Android and iOS apps using modern cross‑platform stacks and best practices."
   },
   {
     name: "Malik Bilal Hussain",
-    role: "Machine Learning Specialist",
+    role: "Web Developer",
     image: null,
-    description: "AI and machine learning expert developing sophisticated models and algorithms that power intelligent automation and predictive analytics solutions for clients."
+    description: "Frontend and backend web developer delivering responsive, accessible, and scalable web applications."
   },
   {
     name: "Anas Khan",
@@ -41,9 +42,21 @@ const technicalTeam = [
   },
   {
     name: "Ashir Aziz Khan",
-    role: "Social Media Manager",
+    role: "Social Media Handler",
     image: ashirImage,
     description: "Digital marketing strategist and social media expert building strong brand presence and fostering engaged communities across multiple social platforms."
+  },
+  {
+    name: "Haider Arshad",
+    role: "Head of Development & Machine Learning Lead",
+    image: haiderImage,
+    description: "Leads engineering delivery and machine learning initiatives, aligning development best practices with state‑of‑the‑art AI research to ship production‑ready solutions."
+  },
+  {
+    name: "Anees ur Rehman",
+    role: "Web Developer",
+    image: aneesImage,
+    description: "Specializes in modern web development, building clean, maintainable, and performance‑focused websites and dashboards."
   }
 ];
 
