@@ -58,99 +58,144 @@ interface TeamMemberProps {
 }
 
 function TeamMember({ member, isLeadership = false }: TeamMemberProps) {
-  const cardSize = isLeadership ? "w-32 h-32" : "w-24 h-24";
-  const textSize = isLeadership ? "text-2xl" : "text-lg";
-  const roleSize = isLeadership ? "mb-4" : "mb-2 text-sm";
-
   return (
     <motion.div
-      className="glass-card rounded-2xl p-8 text-center hover:glow-effect transition-all duration-500 hover:-translate-y-2 group"
-      initial={{ opacity: 0, y: 50 }}
+      className="bg-card/40 backdrop-blur-sm border border-border/20 rounded-lg p-6 hover:bg-card/60 transition-all duration-300 group"
+      initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}
       viewport={{ once: true }}
       data-testid={`team-member-${member.name.toLowerCase().replace(/\s+/g, '-')}`}
     >
-      <div className={`${cardSize} mx-auto mb-6 rounded-full overflow-hidden ring-4 ring-primary/30 group-hover:ring-accent/50 transition-all duration-300`}>
-        {member.image ? (
-          <img 
-            src={member.image} 
-            alt={`${member.name} - ${member.role}`} 
-            className="w-full h-full object-cover"
-          />
-        ) : (
-          <div className="w-full h-full bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center">
-            <User className="w-1/2 h-1/2 text-muted-foreground" />
-          </div>
-        )}
-      </div>
-      <h4 className={`${textSize} font-bold text-foreground mb-2`}>{member.name}</h4>
-      <p className={`text-accent font-semibold ${roleSize}`}>{member.role}</p>
-      <p className="text-muted-foreground leading-relaxed text-sm">
-        {member.description}
-      </p>
-      {isLeadership && (
-        <div className="flex justify-center space-x-4 mt-6">
-          <a 
-            href="#" 
-            className="w-10 h-10 bg-primary/20 hover:bg-primary text-primary hover:text-white rounded-full flex items-center justify-center transition-all duration-300"
-            data-testid={`linkedin-${member.name.toLowerCase().replace(/\s+/g, '-')}`}
-          >
-            <Linkedin className="w-4 h-4" />
-          </a>
-          <a 
-            href="#" 
-            className="w-10 h-10 bg-primary/20 hover:bg-primary text-primary hover:text-white rounded-full flex items-center justify-center transition-all duration-300"
-            data-testid={`twitter-${member.name.toLowerCase().replace(/\s+/g, '-')}`}
-          >
-            <Twitter className="w-4 h-4" />
-          </a>
+      <div className="flex items-start space-x-4">
+        <div className={`${isLeadership ? 'w-20 h-20' : 'w-16 h-16'} flex-shrink-0 rounded-lg overflow-hidden border border-border/20`}>
+          {member.image ? (
+            <img 
+              src={member.image} 
+              alt={`${member.name} - ${member.role}`} 
+              className="w-full h-full object-cover"
+            />
+          ) : (
+            <div className="w-full h-full bg-gradient-to-br from-primary/10 to-accent/10 flex items-center justify-center">
+              <User className="w-1/2 h-1/2 text-muted-foreground" />
+            </div>
+          )}
         </div>
-      )}
+        
+        <div className="flex-1 min-w-0">
+          <h4 className={`${isLeadership ? 'text-xl' : 'text-lg'} font-semibold text-foreground mb-1`}>
+            {member.name}
+          </h4>
+          <p className="text-primary font-medium mb-3 text-sm">
+            {member.role}
+          </p>
+          <p className="text-muted-foreground text-sm leading-relaxed">
+            {member.description}
+          </p>
+          
+          {isLeadership && (
+            <div className="flex space-x-3 mt-4">
+              <a 
+                href="#" 
+                className="w-8 h-8 bg-primary/10 hover:bg-primary/20 text-primary rounded-lg flex items-center justify-center transition-colors duration-300"
+                data-testid={`linkedin-${member.name.toLowerCase().replace(/\s+/g, '-')}`}
+              >
+                <Linkedin className="w-4 h-4" />
+              </a>
+              <a 
+                href="#" 
+                className="w-8 h-8 bg-primary/10 hover:bg-primary/20 text-primary rounded-lg flex items-center justify-center transition-colors duration-300"
+                data-testid={`twitter-${member.name.toLowerCase().replace(/\s+/g, '-')}`}
+              >
+                <Twitter className="w-4 h-4" />
+              </a>
+            </div>
+          )}
+        </div>
+      </div>
     </motion.div>
   );
 }
 
 export default function TeamSection() {
   return (
-    <section id="team" className="py-20 bg-gradient-to-b from-background to-card/50">
+    <section id="team" className="py-20 relative bg-gradient-to-b from-background to-card/20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           className="text-center mb-16"
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-              Our Team
-            </span>
+          <h2 className="text-3xl md:text-4xl font-bold mb-6 text-foreground">
+            Meet Our Expert Team
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Meet the exceptional professionals driving innovation and excellence at Algovist
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            The talented professionals behind Algovist's innovative AI solutions and exceptional client results
           </p>
         </motion.div>
 
         {/* Leadership Team */}
-        <div className="mb-16">
-          <h3 className="text-2xl font-bold text-center mb-12 text-foreground">Leadership</h3>
-          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            {leadership.map((member) => (
-              <TeamMember key={member.name} member={member} isLeadership={true} />
-            ))}
+        <motion.div 
+          className="mb-16"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          viewport={{ once: true }}
+        >
+          <div className="bg-card/30 backdrop-blur-sm border border-border/20 rounded-xl p-8 mb-8">
+            <h3 className="text-xl font-semibold text-foreground mb-6 flex items-center">
+              <div className="w-1 h-6 bg-primary rounded-full mr-3"></div>
+              Leadership Team
+            </h3>
+            <div className="grid md:grid-cols-2 gap-6">
+              {leadership.map((member) => (
+                <TeamMember key={member.name} member={member} isLeadership={true} />
+              ))}
+            </div>
           </div>
-        </div>
+        </motion.div>
 
         {/* Technical Team */}
-        <div>
-          <h3 className="text-2xl font-bold text-center mb-12 text-foreground">Technical Team</h3>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {technicalTeam.map((member) => (
-              <TeamMember key={member.name} member={member} />
-            ))}
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+          viewport={{ once: true }}
+        >
+          <div className="bg-card/30 backdrop-blur-sm border border-border/20 rounded-xl p-8">
+            <h3 className="text-xl font-semibold text-foreground mb-6 flex items-center">
+              <div className="w-1 h-6 bg-accent rounded-full mr-3"></div>
+              Technical Team
+            </h3>
+            <div className="grid md:grid-cols-2 gap-6">
+              {technicalTeam.map((member) => (
+                <TeamMember key={member.name} member={member} />
+              ))}
+            </div>
           </div>
-        </div>
+        </motion.div>
+
+        {/* Call to Action */}
+        <motion.div
+          className="text-center mt-12"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.6, delay: 0.6 }}
+          viewport={{ once: true }}
+        >
+          <p className="text-muted-foreground mb-6">
+            Ready to work with our experienced team on your next project?
+          </p>
+          <button
+            onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
+            className="px-8 py-3 bg-primary hover:bg-primary/90 text-primary-foreground font-semibold rounded-lg transition-all duration-300 hover:scale-105"
+            data-testid="button-contact-team"
+          >
+            Get In Touch
+          </button>
+        </motion.div>
       </div>
     </section>
   );
