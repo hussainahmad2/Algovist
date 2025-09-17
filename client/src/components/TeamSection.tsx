@@ -24,7 +24,7 @@ const leadership = [
 const technicalTeam = [
   {
     name: "Hammad Ul Hassan",
-    role: "Senior Mobile App Developer",
+    role: "Senior Software Engineer",
     image: hammadImage,
     description: "Experienced mobile engineer building high-performance Android and iOS apps using modern cross‑platform stacks and best practices."
   },
